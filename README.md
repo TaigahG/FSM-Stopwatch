@@ -33,7 +33,7 @@ And then I got these 4 K-Map
   ![Stopwatch](img/O1.png)
 
 Finally from those K-Map i got these equations:
-$S0 = s0 s1' + s0 m' + s0' s1 m b'$
-$S1 = s1 m' b' + s1' m' b + s0' s1' m + s0 s1 m b$
-$O0 = s0$
-$O1 = s1$
+- $S0 = s0 s1' + s0 m' + s0' s1 m b'$
+- $S1 = s1 m' b' + s1' m' b + s0' s1' m + s0 s1 m b$
+- $O0 = s0$
+- $O1 = s1$
