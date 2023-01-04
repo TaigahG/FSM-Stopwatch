@@ -12,12 +12,44 @@ void Delay(ms){
     while(timeDelay > clock());
 }
 void PrintData(int hour, int minute,  int second){
-    printf(" %d:%d:%d \n", hour, minute, second);
+    printf("     _____________________________________________________ \n");
+    printf("   /                                                      \\ \n");
+    printf("  /                                                        \\ \n");
+    printf(" /                                                          \\ \n");
+    printf(" |                                                          | \n");
+    printf(" |                          %d:%d:%d                           | \n", hour, minute, second);
+    printf(" |                                                          | \n");
+    printf(" |                                                          | \n");
+    printf(" \\                                                          / \n");
+    printf("  \\                         Ready                          / \n");
+    printf("   \\______________________________________________________/ \n");
+
+    
+}
+void PrintDataStpWatch(int hour, int minute,  int second, int input, int S0, int S1){
+
+    bool start = true;
+    printf("     _____________________________________________________ \n");
+    printf("   /                                                      \\ \n");
+    printf("  /                                                        \\ \n");
+    printf(" /                                                          \\ \n");
+    printf(" |                                                          | \n");
+    printf(" |                          %d:%d:%d                           | \n", hour, minute, second);
+    printf(" |                                                          | \n");
+    printf(" |                                                          | \n");
+    printf(" \\                                                          / \n");
+    printf("  \\                         Start                          / \n");
+    printf("   \\______________________________________________________/ \n");
+    printf("Current state %d %d\n", S0, S1);
+    printf("Insert input(0/1/2/3(both) \n");
+
+
+
 
     
 }
 
-void StopWatch(int hour, int minute, int second, bool start, int input){
+void StopWatch(int hour, int minute, int second, bool start, int input, int S0, int S1){
     while(start == true){
 
         if (minute > 59){
@@ -29,63 +61,20 @@ void StopWatch(int hour, int minute, int second, bool start, int input){
             minute++;
         }
         system("clear");
-        PrintData(hour, minute, second);
+        PrintDataStpWatch(hour, minute, second, input, S0, S1);
         Delay(1000000);
         second++;
-        sleep(1);
-        printf("Insert input 1/2/3(both) \n");
-        scanf("%d",&input);
-        if(input == 2){
-            start = false;
-            break;
-        }
-        else if(input == 1 || input == 3){
-            continue;
-        }
+ 
+
         
 
         
   
     }
-    // while true{
-    //     if(flag == 0){
-    //         for(int i = 0; i<=hour; i++){
-                
-    //             for(minute = 0; minute<=60; minute++){
-                    
-    //                 for(second = 0;  second<=60; second++){
-                        
-    //                     system("clear");
-    //                     PrintData(hour,minute,second);
-    //                     scanf("%d",&input);
-    //                     Delay(1000000);
 
-
-    //                 }
-    //             }
-                
-    //         }
-    //     }
-
-    // }
 
 }
-void choice(int hour, int minute, int second, bool start, int input){
-        do
-        {   
 
-            printf("Insert input 1/2/3(both)\n");
-            scanf("%d",&input);
-            if(input == 2){
-                start = false;
-                break;
-            }
-            else{
-            continue;
-            }
-
-        } while (sleep(1));
-}
 int main(void){
     int s0 = 0, s1 = 0, S0 = 0, S1 = 0, b1 = 0, b2 = 0, O0 = 0, O1 = 0;
     int hour = 0, minute = 0, second = 0;
@@ -93,7 +82,7 @@ int main(void){
     bool start = false;
     while(1){
         if ((S0 == 0 && S1 == 0)){
-            // system("clear");
+            system("clear");
             if((b1 == 1 && b2 == 0)){
                  
                 system("clear");
@@ -135,11 +124,10 @@ int main(void){
             if(b1 == 1 && b2 == 0){
                 start = true;
                 system("clear");
-                choice(hour, minute,second,start, input);
+                StopWatch(hour, minute, second, start, input, S0, S1);
             }
             else if(b1 == 0 && b2 == 1){
                 start = false;
-                break;
             }
             else if(b1 == 1 && b2 == 1){
                 start = true;
@@ -151,7 +139,7 @@ int main(void){
         }
         b1 = 0;
         b2 = 0;
-        printf("Insert input(1/2/3(both) \n");
+        printf("Insert input(0/1/2/3(both) \n");
         scanf("%d", &input);
         if(input == 1){
             b1 = 1;
