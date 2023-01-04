@@ -21,18 +21,18 @@ And then I got these 4 K-Map
 
 - ###### Next State (S0) K-Map
 
-  ![Stopwatch](img/NSS0.png)
+<img src="img/NSS0.png" widht="300" height="300" />
 
 - ###### Next State (S1) K-Map
 
-  ![Stopwatch](img/NSS1.png)
+ <img src="img/NSS1.png" widht="300" height="300" />
 
 - ###### Output (O0) K-Map
 
-  ![Stopwatch](img/O0.png)
+<img src="img/O0.png" widht="300" height="300" />
 
 - ###### Output (O1) K-Map
-  ![Stopwatch](img/O1.png)
+<img src="img/O1.png" widht="300" height="300" />
 
 Finally from those K-Map i got these equations:
 - $S0 = s0 s1' + s0 m' + s0' s1 m b'$
