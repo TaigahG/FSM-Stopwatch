@@ -25,14 +25,14 @@ And then I got these 4 K-Map
 
 - ###### Next State (S1) K-Map
 
- <img src="img/NSS1.png" widht="300" height="300" />
+ <img src="img/NSS1.png" widht="6000" height="600" />
 
 - ###### Output (O0) K-Map
 
 <img src="img/O0.png" widht="600" height="600" />
 
 - ###### Output (O1) K-Map
-<img src="img/O1.png" widht="300" height="300" />
+<img src="img/O1.png" widht="600" height="600" />
 
 Finally from those K-Map i got these equations:
 - $S0 = s0 s1' + s0 m' + s0' s1 m b'$
