@@ -21,7 +21,7 @@ And then I got these 4 K-Map
 
 - ###### Next State (S0) K-Map
 
-<img src="img/NSS0.jpeg" widht="300" height="300" />
+<img src="img/NSS0.png" widht="600" height="600" />
 
 - ###### Next State (S1) K-Map
 
@@ -29,7 +29,7 @@ And then I got these 4 K-Map
 
 - ###### Output (O0) K-Map
 
-<img src="img/O0.jpeg" widht="300" height="300" />
+<img src="img/O0.png" widht="600" height="600" />
 
 - ###### Output (O1) K-Map
 <img src="img/O1.png" widht="300" height="300" />
