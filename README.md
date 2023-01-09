@@ -39,3 +39,13 @@ Finally from those K-Map i got these equations:
 - $S1 = s1 m' b' + s1' m' b + s0' s1' m + s0 s1 m b$
 - $O0 = s0$
 - $O1 = s1$
+
+
+## How to run
+To run, we first download the file or clone the repo using "git clone <link>". Then after the downloaded the file or cloned the file, open the file and then write "make" on terminal. after write make you can use the input 0/1/2/3 to change the state
+
+## The screenshots when running the program
+<img src="img/Exit.png" width="300" />
+<img src="img/Ready.png" width="300" />
+<img src="img/Start.png" width="300" />
+
