@@ -6,8 +6,8 @@
 #include <string.h>
 #include <signal.h>
 #include "mylib/mylib.h"
-volatile sig_atomic_t flag = 0;
-volatile sig_atomic_t flag2 = 0;
+volatile sig_atomic_t flag;
+volatile sig_atomic_t flag2;
 
 
 void my_function(int sig){ // can be called asynchronously
@@ -64,7 +64,7 @@ void PrintDataStpWatch(int hour, int minute,  int second, int input, int S0, int
     printf("  \\                         Start                          / \n");
     printf("   \\______________________________________________________/ \n");
     printf("Current state %d %d\n", S0, S1);
-    printf("Insert input(0/1/2/3(both) (press CTRL + C to pause when the timer start) \n");
+    printf("(press CTRL + C to pause when the timer start) \n");
 
     
 
@@ -101,8 +101,6 @@ void StopWatch(int hour, int minute, int second, bool start, int input, int S0, 
             if(flag2 == 0){
                 if(printed == 0){
                     printf("\n");
-                    printf("Current state %d %d\n", S0, S1);
-
                     printf("timer is paused, press CTRL+C to resume the timer or CTRL+\\ to exit\n");
                     printed=1;
                     
@@ -111,6 +109,7 @@ void StopWatch(int hour, int minute, int second, bool start, int input, int S0, 
 
             }
             else{
+                printf("\n");
                 break;
             }
             // printf("timer is paused, press CTRL+C to start the timer\n");
@@ -127,61 +126,17 @@ void StopWatch(int hour, int minute, int second, bool start, int input, int S0, 
 
 
 }
-void StopWatch2(int hour, int minute, int second, bool start, int input, int S0, int S1){
-    signal(SIGINT, my_function); 
-    signal(SIGQUIT, my_function2);
-    while(start == true){
 
-        if(flag == 0){
-            if (minute > 59){
-                minute = 0;
-                hour++;
-            }
-            if(second > 59){
-                second = 0;
-                minute++;
-            }
-            PrintDataStpWatch(hour, minute, second, input, S0, S1);
-            Delay(1000000);
-            second++;
-
-            // second++;
-            // system("clear");
-            // printf("second: %d\n",second);
-
-        } 
-        else{
-            if(flag2 == 0){
-                printf("timer is paused, press CTRL+C to start the timer");
-
-            }
-            else{
-                break;
-            }
-            // printf("timer is paused, press CTRL+C to start the timer\n");
-        }
-
-
-        sleep(1);
-
-        
-
-        
-  
-    }
-
-
-}
 
 int main(void){
     int s0 = 0, s1 = 0, S0 = 0, S1 = 0, b1 = 0, b2 = 0, O0 = 0, O1 = 0;
     int hour = 0, minute = 0, second = 0;
     int input;
-    bool start;
+    bool start = true;
     signal(SIGINT, my_function);
     signal(SIGQUIT, my_function2);
     while(1){
-  
+        system("clear");
         if ((S0 == 0 && S1 == 0)){
             system("clear");
             if((b1 == 1 && b2 == 0)){
@@ -205,7 +160,7 @@ int main(void){
                 PrintData(hour, minute, second);
             }
             else if(b1 == 0 && b2 == 1){
-                 
+                
                 system("clear");
                 PrintData(hour, minute, second);
 
@@ -222,42 +177,30 @@ int main(void){
             printf("Current state %d %d\n", S0, S1);
         }
         else if((S0 == 1 && S1 == 0)){
-            if(b1 == 0 && b2 == 1){
-                start = false;
-            }
-            else if(b1 == 1 && b2 == 1){
-                start = true;
-                system("clear");
-                StopWatch(hour, minute, second, start, input, S0, S1);
-
-            }
-            else if(b1 == 1 && b2 == 0){
-                start = true;
-                system("clear");
-                StopWatch(hour, minute, second, start, input, S0, S1);
-            }
-            else if(b1 == 0 && b2 == 0){
-                PrintData(hour, minute, second);
-            }
-            printf("Current state %d %d\n", S0, S1);
-        }
-        else if (S0 == 1 && S1 == 1){
             if(b1 == 1 && b2 == 0){
-                PrintData(hour, minute, second);
-
+                start = true;
+                flag = 0;
+                flag2 = 0;
+                system("clear");
+                StopWatch(hour, minute, second, start, input, S0, S1);
             }
             else if(b1 == 0 && b2 == 1){
-                start = true;
-                StopWatch2(hour, minute, second, start, input, S0, S1);
-            }
-            else if(b1 == 1 && b2 == 1){
+                start = false;
+                system("clear");
                 PrintData(hour, minute, second);
             }
+            else if(b1 == 1 && b2 == 1){
+                start = true;
+                flag = 0;
+                flag2 = 0;
+                system("clear");
+                StopWatch(hour, minute, second, start, input, S0, S1);
+
+            }
             else if(b1 == 0 && b2 == 0){
-                start = false;
+                start = true;
             }
             printf("Current state %d %d\n", S0, S1);
-
         }
         b1 = 0;
         b2 = 0;
