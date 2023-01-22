@@ -199,6 +199,10 @@ int main(void){
             }
             else if(b1 == 0 && b2 == 0){
                 start = true;
+                flag = 0;
+                flag2 = 0;
+                system("clear");
+                StopWatch(hour, minute, second, start, input, S0, S1);
             }
             printf("Current state %d %d\n", S0, S1);
         }
