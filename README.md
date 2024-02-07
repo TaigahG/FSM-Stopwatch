@@ -46,8 +46,8 @@ Finally from those K-Map i got these equations:
 To run, we first download the file or clone the repo using "git clone <link>". Then after the downloaded the file or cloned the file, open the file and then write "make" on terminal. after write make you can use the input 0/1/2/3 to change the state
 
 ## The screenshots when running the program
-<img src="https://cdn.discordapp.com/attachments/691621581885145159/1065891692793827348/Screen_Shot_2023-01-20_at_14.11.49.png" width="300" />
-<img src="https://cdn.discordapp.com/attachments/691621581885145159/1065891692558950400/Screen_Shot_2023-01-20_at_14.11.56.png" width="300" />
-<img src="https://cdn.discordapp.com/attachments/691621581885145159/1065891692282118194/Screen_Shot_2023-01-20_at_14.12.03.png" width="300" />
+<img src="img/Ready.png" width="300" />
+<img src="img/Start.png" width="300" />
+<img src="img/State.png" width="300" />
 <img src="https://cdn.discordapp.com/attachments/691621581885145159/1065891692030464022/Screen_Shot_2023-01-20_at_14.12.12.png" width="300" />
 
