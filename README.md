@@ -16,7 +16,7 @@ The initial state is Exit, then when you pressed button 1 or button 2 or pressed
 
 From the State above I ended up with this table
 
-<img src="https://cdn.discordapp.com/attachments/691621581885145159/1065883695145304094/Screen_Shot_2023-01-20_at_13.20.12.png" widht="300" height="300" />
+<img src="img/Diagram.png" widht="300" height="300" />
 
 And then I got these 4 K-Map
 
